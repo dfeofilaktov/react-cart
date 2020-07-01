@@ -1,3 +1,1 @@
-// TODO: LOADERS
-export const SHOW_LOADER = 'SHOW_LOADER';
-export const CLOSE_LOADER = 'CLOSE_LOADER';
+export const RECIEVE_LIST = 'RECIEVE_LIST';

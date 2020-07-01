@@ -4,19 +4,14 @@ import Immutable from 'seamless-immutable';
 import * as ActionTypes from '../../constants/actionTypes';
 
 const initialState = Immutable({
-    selectedMenuIndex: 0,
-    loading: false,
+    list: [],
 });
 
 const viewReducer = createReducer(initialState, {
-    [ActionTypes.SHOW_LOADER](state) {
+    [ActionTypes.RECIEVE_LIST](state, action) {
+        console.log(action.list);
         return state.merge({
-            loading: true,
-        });
-    },
-    [ActionTypes.CLOSE_LOADER](state) {
-        return state.merge({
-            loading: false,
+            list: action.list,
         });
     },
 });

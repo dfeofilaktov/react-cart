@@ -5,12 +5,31 @@
     ],
     "rules": {
         "react/jsx-filename-extension": 0,
-        "indent": [2, 4],
-        "react/jsx-indent": [2, 4],
-        "jsx-quotes": [2, "prefer-single"],
+        "indent": [
+            2,
+            4
+        ],
+        "react/jsx-indent": [
+            2,
+            4
+        ],
+        "react/jsx-indent-props": [
+            2,
+            4
+        ],
+        "jsx-quotes": [
+            2,
+            "prefer-single"
+        ],
         "no-console": 0,
         "import/prefer-default-export": 0,
-        "arrow-body-style": 0
+        "arrow-body-style": 0,
+        "react/forbid-prop-types": 0,
+        "linebreak-style": 0,
+        "react/jsx-props-no-spreading": 0,
+        "no-plusplus": 0,
+        "spaced-comment": 0,
+        "object-property-newline": 0
     },
     "env": {
         "browser": true,

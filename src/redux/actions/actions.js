@@ -1,14 +1,8 @@
 import * as ActionTypes from '../../constants/actionTypes';
 
-export const SHOW_LOADER = () => {
+export const RECIEVE_LIST = (list) => {
     return {
-        type: ActionTypes.SHOW_LOADER,
-        //
-    };
-};
-export const CLOSE_LOADER = () => {
-    return {
-        type: ActionTypes.CLOSE_LOADER,
-        //
+        type: ActionTypes.RECIEVE_LIST,
+        list,
     };
 };
