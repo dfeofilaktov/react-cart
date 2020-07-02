@@ -2,21 +2,18 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import classnames from 'classnames';
 
+import ListItem from './item';
+
 const Content = ({ list }) => {
     console.log(list);
     return (
         <div className='Content'>
             <div className='listContainer'>
-                {_.map(list, (item, i) => (
-                    <div
-                        key={i}
-                        className='listItemCard'
-                    >
-                        <h5>{item.name}</h5>
-                        <div className='listItemPicture'>
-                            {/* <img src={item.img} alt='' /> */}
-                        </div>
-                    </div>
+                {_.map(list, (item, key) => (
+                    <ListItem
+                        key={key}
+                        data={item}
+                    />
                 ))}
             </div>
         </div>
