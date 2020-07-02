@@ -1,30 +1,36 @@
 // import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from 'react-router-dom';
 
 import '../../sass/main.sass';
 import Header from './Header/header';
-import Content from './Content/content';
+import List from '../List/List';
+import Cart from '../Cart/Cart';
 
 const Markup = () => {
     return (
-        <div className='markup'>
-            <Header />
-            <Content />
-        </div>
+        <Router>
+            <div className='markup'>
+                <Header />
+                <Switch>
+                    <Route exact path='/' render={() => <List />} />
+                    <Route path='/cart' render={() => <Cart />} />
+                </Switch>
+            </div>
+        </Router>
     );
 };
 
-Markup.propTypes = {
-    // index: PropTypes.number.isRequired,
-};
+Markup.propTypes = {};
 
-Markup.defaultProps = {
-};
+Markup.defaultProps = {};
 
-function select(store) {
-    return {
-        index: store.viewReducer.selectedMenuIndex,
-    };
+function select(/* store */) {
+    return {};
 }
 
 export default connect(select)(Markup);

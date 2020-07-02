@@ -1,5 +1,7 @@
 header
+    position: relative
     height: 100px
+    min-height: 100px
     width: 100%
     display: flex
     justify-content: center
@@ -7,7 +9,37 @@ header
     background-color: $primary
     color: $dark
     font-weight: 900
-    // box-shadow: $box_shadow_1
+    box-shadow: $box_shadow_2
     .hello
         font-size: 24px
-        // font-weight: 600
+        text-decoration: none
+        color: $dark
+    .cartBtnHolder
+        position: absolute
+        display: flex
+        align-items: center
+        right: 20px
+        top: 0
+        padding: 20px
+        height: 100%
+        box-sizing: border-box
+        .cartBtn
+            position: relative
+            text-decoration: none
+            color: $dark
+            .counter
+                position: absolute
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 16px
+                top: -5px
+                right: -5px
+                width: 25px
+                height: 25px
+                border-radius: 15px
+                background: $default
+                box-shadow: 0 0 5px 0 transparentize($dark, .7)
+            img
+                height: 40px
+                // width: 20px

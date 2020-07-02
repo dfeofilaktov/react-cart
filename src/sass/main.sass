@@ -8,15 +8,25 @@ body
     margin: 0
     padding: 0
     font-family: 'Montserrat', sans-serif
-    font-size: 14px
-    background: $dark
-    color: $default
+    font-size: 16px
+    background: $default
+    color: $dark
+    font-weight: 600
     button
         background: $primary
         border: none
-        padding: 10px 20px
-        text-transform: uppercase
+        padding: 8px 0
+        // text-transform: uppercase
+        font-size: 12px
         font-weight: 600
+        box-shadow: 0 0 20px 0 transparentize($primary, .3)
+        transition: all .3s ease
+        &:hover
+            box-shadow: 0 0 30px 0 transparentize($default, .3)
+            cursor: pointer
+        &:disabled
+            background: $default
+            box-shadow: none
     #root
         height: 100vh
 

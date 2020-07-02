@@ -2,15 +2,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import classnames from 'classnames';
 
-import ListItem from './item';
+import Item from './Item';
 
-const Content = ({ list }) => {
-    console.log(list);
+const List = ({ list }) => {
     return (
-        <div className='Content'>
+        <div className='List'>
             <div className='listContainer'>
                 {_.map(list, (item, key) => (
-                    <ListItem
+                    <Item
                         key={key}
                         data={item}
                     />
@@ -20,17 +19,16 @@ const Content = ({ list }) => {
     );
 };
 
-Content.propTypes = {
+List.propTypes = {
     list: PropTypes.array.isRequired,
 };
 
-Content.defaultProps = {};
+List.defaultProps = {};
 
 function select(store) {
-    console.log(store);
     return {
         list: store.viewReducer.list,
     };
 }
 
-export default connect(select)(Content);
+export default connect(select)(List);
