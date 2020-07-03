@@ -13,8 +13,9 @@ const ListItem = ({ dispatch, data, cart }) => {
     return (
         <div className='listItemCard'>
             <h5>{data.name}</h5>
-            <div className='listItemPicture'>
-                {/* <img src={item.img} alt='' /> */}
+            <div className='listItemPrice'>{data.price.toFixed(2)}</div>
+            <div className='listItemInfo'>
+                {data.info}
             </div>
             <button
                 disabled={isInCart}

@@ -1,5 +1,7 @@
 header
-    position: relative
+    position: fixed
+    top: 0
+    left: 0
     height: 100px
     min-height: 100px
     width: 100%
@@ -10,6 +12,7 @@ header
     color: $dark
     font-weight: 900
     box-shadow: $box_shadow_2
+    z-index: 999
     .hello
         font-size: 24px
         text-decoration: none
@@ -27,6 +30,7 @@ header
             position: relative
             text-decoration: none
             color: $dark
+            margin-left: 15px
             .counter
                 position: absolute
                 display: flex
@@ -38,7 +42,7 @@ header
                 width: 25px
                 height: 25px
                 border-radius: 15px
-                background: $default
+                background: $secondary
                 box-shadow: 0 0 5px 0 transparentize($dark, .7)
             img
                 height: 40px

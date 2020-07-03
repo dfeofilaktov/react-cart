@@ -10,6 +10,7 @@ import '../../sass/main.sass';
 import Header from './Header/header';
 import List from '../List/List';
 import Cart from '../Cart/Cart';
+import Footer from './Footer/footer';
 
 const Markup = () => {
     return (
@@ -20,6 +21,7 @@ const Markup = () => {
                     <Route exact path='/' render={() => <List />} />
                     <Route path='/cart' render={() => <Cart />} />
                 </Switch>
+                <Footer />
             </div>
         </Router>
     );

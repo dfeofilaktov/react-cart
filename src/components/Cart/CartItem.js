@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { IconButton, Icon } from '@material-ui/core';
 import { CNAHGE_ITEM_QUANTITY, REMOVE_FROM_CART } from '../../redux/actions/actions';
+import Price from '../Price/Price';
 // import classnames from 'classnames';
 
 const CartItem = ({ dispatch, data }) => {
@@ -12,7 +13,10 @@ const CartItem = ({ dispatch, data }) => {
     };
     return (
         <div className='CartItem'>
-            <div className='name'>{data.name}</div>
+            <div className='CartItemInfo'>
+                <div className='CartItemName'>{data.name}</div>
+                <Price number={data.price * data.quantity} size='small' />
+            </div>
             <div className='controls'>
                 <IconButton
                     onClick={() => handleCnangeQuantity(-1)}

@@ -2,7 +2,14 @@
 @import 'config'
 @import 'content'
 @import 'header'
-@import 'loader'
+@import 'helper'
+
+::-webkit-scrollbar
+    width: 7px
+    height: 7px
+    background-color: $default
+::-webkit-scrollbar-thumb
+    background-color: $secondary
 
 body
     margin: 0
@@ -12,6 +19,20 @@ body
     background: $default
     color: $dark
     font-weight: 600
+    p
+        margin: 0
+    input
+        height: 30px
+        border: none
+        margin: 5px 0 20px 0
+        font-size: 16px
+        font-family: inherit
+        font-weight: 600
+        border: 2px solid transparentize($primary, 1)
+        background: lighten($default, 10)
+        &:focus
+            outline: none
+            border: 2px solid $primary
     button
         background: $primary
         border: none
@@ -32,6 +53,18 @@ body
 
         .markup
             width: 100%
-            height: 100%
-            @extend .flex_space_center
+            height: 100vh
+            padding-top: 100px
+            display: flex
             flex-direction: column
+            box-sizing: border-box
+        
+            .Footer
+                position: relative
+                min-height: 100px
+                width: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                text-transform: uppercase
+                font-weight: 400
