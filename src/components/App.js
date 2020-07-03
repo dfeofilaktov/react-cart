@@ -1,17 +1,20 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import firebase from 'firebase';
 
 import '../sass/main.sass';
 import { useEffect } from 'react';
 import Markup from './Markup/markup';
 import { getList } from '../redux/thunks/baseThunk';
 import { RECOVER_CART } from '../redux/actions/actions';
+import { firebaseConfig } from '../config/firebase';
 
 const App = ({ dispatch, cart }) => {
     useEffect(() => {
-        getList()(dispatch);
+        dispatch(getList());
         const storedCart = JSON.parse(window.localStorage.getItem('cart'));
         dispatch(RECOVER_CART(storedCart || []));
+        firebase.initializeApp(firebaseConfig);
     }, []);
 
     useEffect(() => {

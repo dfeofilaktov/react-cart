@@ -23,10 +23,12 @@
             height: 240px
             background: lighten($default, 5)
             box-shadow: $box_shadow_1
-            // margin: 20px
+            border-radius: 10px
             padding: 20px
             box-sizing: border-box
+            border: 2px solid transparentize($secondary, 1)
             &:hover
+                border: 2px solid $secondary
                 cursor: default
                 .listItemPrice
                     background: $secondary
@@ -88,6 +90,7 @@
             justify-content: space-between
             padding: 0 20px 0 40px
             box-sizing: border-box
+            border-radius: 10px
             margin: 15px
             .CartItemInfo
                 display: flex
@@ -120,10 +123,15 @@
             width: 280px
             margin: 15px
             padding: 20px
+            border-radius: 10px
+            .info
+                font-size: 12px
+                opacity: .4
             p
                 font-size: 14px
-                font-weight: 400
+                font-weight: 100
             button
+                margin-top: 20px
                 text-transform: uppercase
         .CartTotals
             margin: 15px

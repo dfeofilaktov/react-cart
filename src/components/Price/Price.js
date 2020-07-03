@@ -12,7 +12,7 @@ const Price = ({ number, size }) => {
 
 Price.propTypes = {
     number: PropTypes.number.isRequired,
-    size: PropTypes.number,
+    size: PropTypes.string,
 };
 
 Price.defaultProps = {

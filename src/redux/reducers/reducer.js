@@ -6,6 +6,8 @@ import * as ActionTypes from '../../constants/actionTypes';
 const initialState = Immutable({
     list: [],
     cart: [],
+    snackbarVisible: false,
+    snackbarMsg: {},
 });
 
 const viewReducer = createReducer(initialState, {
@@ -17,6 +19,11 @@ const viewReducer = createReducer(initialState, {
     [ActionTypes.RECOVER_CART](state, action) {
         return state.merge({
             cart: action.cart,
+        });
+    },
+    [ActionTypes.CLEAR_CART](state) {
+        return state.merge({
+            cart: [],
         });
     },
     [ActionTypes.ADD_TO_CART](state, action) {
@@ -47,6 +54,19 @@ const viewReducer = createReducer(initialState, {
 
         return state.merge({
             cart: newCart,
+        });
+    },
+    [ActionTypes.SHOW_SNACKBAR](state, action) {
+        const { msg } = action;
+
+        return state.merge({
+            snackbarVisible: true,
+            snackbarMsg: msg,
+        });
+    },
+    [ActionTypes.HIDE_SNACKBAR](state) {
+        return state.merge({
+            snackbarVisible: false,
         });
     },
 });

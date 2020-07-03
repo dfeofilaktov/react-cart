@@ -10,7 +10,7 @@ import '../../sass/main.sass';
 import Header from './Header/header';
 import List from '../List/List';
 import Cart from '../Cart/Cart';
-import Footer from './Footer/footer';
+import Snackbar from '../Snackbar/Snackbar';
 
 const Markup = () => {
     return (
@@ -21,8 +21,8 @@ const Markup = () => {
                     <Route exact path='/' render={() => <List />} />
                     <Route path='/cart' render={() => <Cart />} />
                 </Switch>
-                <Footer />
             </div>
+            <Snackbar />
         </Router>
     );
 };

@@ -13,3 +13,25 @@
         font-size: 14px
         .PriceNumber
             font-size: 20px
+
+.Snackbar
+    position: absolute
+    bottom: 40px
+    right: calc(50% - 140px)
+    width: 280px
+    height: 60px
+    background: lighten($dark, 10)
+    color: $default
+    box-shadow: $box_shadow_1
+    border-radius: 10px
+    display: flex
+    justify-content: flex-start
+    padding: 0 40px
+    align-items: center
+    transform: translateY(100px)
+    transition: all .3s ease
+    box-sizing: border-box
+    &.visible
+        transform: translateY(0px)
+    .SnackbarText
+        margin-left: 20px

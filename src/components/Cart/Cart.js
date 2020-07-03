@@ -7,8 +7,8 @@ import OrderForm from './OrderForm';
 // import classnames from 'classnames';
 
 const Cart = ({ cart }) => {
-    return (
-        <div className='Cart'>
+    const renderCart = () => (
+        <>
             <div className='CartList'>
                 {_.map(cart, (item, i) => (
                     <CartItem
@@ -16,7 +16,6 @@ const Cart = ({ cart }) => {
                         data={item}
                     />
                 ))}
-                {!cart.length && <div>Cart is empty</div>}
             </div>
             <div className='CartOrder'>
                 <OrderForm />
@@ -25,6 +24,11 @@ const Cart = ({ cart }) => {
                     <Price number={GetTotalPrice(cart)} size='large' />
                 </div>
             </div>
+        </>
+    );
+    return (
+        <div className='Cart'>
+            {cart.length > 0 ? renderCart() : <div>Cart is empty</div>}
         </div>
     );
 };
