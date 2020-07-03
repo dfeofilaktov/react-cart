@@ -6,15 +6,23 @@
         font-weight: 600
         font-size: 18px
     &.small
+        @media #{$media_phones}
+            display: none
         font-size: 10px
         .PriceNumber
             font-size: 14px
     &.large
+        @media #{$media_phones}
+            font-size: 10px
         font-size: 14px
         .PriceNumber
+            @media #{$media_phones}
+                font-size: 14px
             font-size: 20px
 
 .Snackbar
+    @media #{$media_phones}
+        transform: translateY(300px)
     position: absolute
     bottom: 40px
     right: calc(50% - 140px)
@@ -28,10 +36,12 @@
     justify-content: flex-start
     padding: 0 40px
     align-items: center
+    opacity: 0
     transform: translateY(100px)
     transition: all .3s ease
     box-sizing: border-box
     &.visible
+        opacity: 1
         transform: translateY(0px)
     .SnackbarText
         margin-left: 20px

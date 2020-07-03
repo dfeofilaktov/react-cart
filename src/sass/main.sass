@@ -60,13 +60,15 @@ body
         height: 100vh
 
         .markup
+            @media #{$media_phones}
+                margin-top: 60px
             width: 100%
             height: calc(100vh - 100px)
             margin-top: 100px
             display: flex
             flex-direction: column
             box-sizing: border-box
-            overflow: scroll
+            overflow-y: scroll
             .Footer
                 position: relative
                 min-height: 100px
