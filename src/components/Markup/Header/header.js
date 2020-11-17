@@ -10,7 +10,7 @@ const Header = ({ cart }) => {
     const totalPrice = GetTotalPrice(cart);
     return (
         <header>
-            <Link className='hello' to='/'>React Cart</Link>
+            <Link className='hello' to='/'>React Cart @feature/test</Link>
             <div className='cartBtnHolder'>
                 { totalPrice > 0 && <Price number={totalPrice} size='large' /> }
                 {/* <div className='cartTotalPrice'>{totalPrice > 0 ? totalPrice : ''}</div> */}
